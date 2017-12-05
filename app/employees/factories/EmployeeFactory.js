@@ -41,6 +41,34 @@ angular
                     }
                 })
             }
+        },
+        "murder": {
+            value: function (key) {
+                return $http({
+                    method: "DELETE",
+                    url: `https://angular-employees-94a88.firebaseio.com/employees/${key}/.json`
+                })
+            }
+        },
+        "find": {
+            value: function (searchString) {
+                const result = this.cache.find(emp => {
+                    return emp.firstName.includes(searchString) ||
+                           emp.lastName.includes(searchString)
+                })
+                return result
+            }
+        },
+        "fire": {
+            value: function (employee, key) {
+                employee.employmentEnd = Date.now()
+
+                return $http({
+                    method: "PUT",
+                    url: `https://angular-employees-94a88.firebaseio.com/employees/${key}/.json`,
+                    data: employee
+                })
+            }
         }
     })
 })
