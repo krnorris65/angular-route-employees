@@ -20,3 +20,5 @@ angular
         })
     }
 })
+
+// initial code had $scope.addEmployee instead of $scope.hireEmployee...might need to change back
