@@ -14,7 +14,7 @@ angular
         */
         $scope.fireEmployee = () =>
         EmployeeFactory.fire($scope.employee, $routeParams.employeeId).then(() =>
-            $location.url("/"));
+            $location.url("/employees/list"));
 
     /*
     This function is bound to an ng-click directive
@@ -22,6 +22,6 @@ angular
     */
     $scope.murderEmployee = () =>
         EmployeeFactory.murder($routeParams.employeeId).then(() =>
-            $location.url("/"));
+            $location.url("/employees/list"));
     }
 )
