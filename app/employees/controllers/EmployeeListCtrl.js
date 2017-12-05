@@ -4,11 +4,8 @@ angular
     $scope.employees = []
 
     //uses the employeeFactory to get data from firebase and adds them to the employees array
-    const loadEmployees = () => {
-        EmployeeFactory.list(true).then(data => {
-        $scope.employees = data
-            })
-    }
 
-    loadEmployees()
+    EmployeeFactory.list(true).then(data => {
+    $scope.employees = data
+        })
 })
