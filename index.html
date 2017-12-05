@@ -4,16 +4,15 @@
 <head>
   <meta charset="utf-8">
   <title>NSS Starter Kit - Angular</title>
+  <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body ng-app="EmployeeApp">
 
-    <nav ng-controller="AuthCtrl">
-        <button ng-click="logoutUser()">Logout</button>
-    </nav>
+    <nav ng-include="'app/navigation/partials/navigation.html'"></nav>
     
     <div ng-view></div>
-
+    
 
     <script src="./lib/node_modules/angular/angular.min.js"></script>
     <script src="./lib/node_modules/firebase/firebase.js"></script>
